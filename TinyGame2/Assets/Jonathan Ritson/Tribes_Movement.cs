@@ -16,7 +16,7 @@ public class Tribes_Movement : MonoBehaviour
     public bool jump_enable;
 
     // just an observation variable
-    //private float overallspeed;
+    public float overallspeed;
 
 
     // Start is called before the first frame update
@@ -34,7 +34,7 @@ public class Tribes_Movement : MonoBehaviour
     void Update()
     {
         // just an observation variable
-        //overallspeed = RB.velocity.magnitude;
+        overallspeed = RB.velocity.magnitude;
 
         PCpos = RB.velocity;
 

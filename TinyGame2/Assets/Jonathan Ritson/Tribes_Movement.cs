@@ -14,7 +14,6 @@ public class Tribes_Movement : MonoBehaviour
     private float targetTime;
     public bool floorstick_enable;
     public bool jump_enable;
-    private bool ground;
 
     // just an observation variable
     //private float overallspeed;
@@ -88,8 +87,6 @@ public class Tribes_Movement : MonoBehaviour
                     PCpos.y = 1;
                     RB.velocity = PCpos;
                     targetTime = 0;
-
-                    StartCoroutine(Land());
                 }
 
                 if ((targetTime >= 0.4f) && (targetTime < 0.8f))
@@ -98,8 +95,6 @@ public class Tribes_Movement : MonoBehaviour
                     PCpos.y = 5;
                     RB.velocity = PCpos;
                     targetTime = 0;
-
-                    StartCoroutine(Land());
                 }
 
                 if ((targetTime >= 0.8f) && (targetTime < 1.25f))
@@ -108,8 +103,6 @@ public class Tribes_Movement : MonoBehaviour
                     PCpos.y = 10;
                     RB.velocity = PCpos;
                     targetTime = 0;
-
-                    StartCoroutine(Land());
                 }
 
                 if ((targetTime >= 1.25f) && (targetTime < 1.5f))
@@ -118,8 +111,6 @@ public class Tribes_Movement : MonoBehaviour
                     PCpos.y = 15;
                     RB.velocity = PCpos;
                     targetTime = 0;
-
-                    StartCoroutine(Land());
                 }
 
                 if (targetTime >= 1.5f)
@@ -128,8 +119,6 @@ public class Tribes_Movement : MonoBehaviour
                     PCpos.y = 20;
                     RB.velocity = PCpos;
                     targetTime = 0;
-
-                    StartCoroutine(Land());
                 }
             }
         }
@@ -150,24 +139,8 @@ public class Tribes_Movement : MonoBehaviour
 
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnCollisionStay(Collision collision)
     {
-        ground = true;
-
-        ground = false;
-    }
-
-
-    IEnumerator Land()
-    {
-        {
-            yield return new WaitForSeconds(0.1f);
-
-            if (ground == true)
-            {
-                floorstick_enable = true;
-                
-            }
-        }
+        floorstick_enable = true;
     }
 }

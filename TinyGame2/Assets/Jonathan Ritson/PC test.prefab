@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8405747519520748511}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: raypoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -155,12 +155,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41e11fab1c691e34593c82c712c369cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RayPoint: {fileID: 8405747519520748511}
   forbackspeed: 500
   sidespeed: 1000
   lookSpeed: 3
   floorstick_enable: 1
   jump_enable: 1
+  Ice: {fileID: 13400000, guid: e4e56b208acc8f7458c607c522f3a1c9, type: 2}
   overallspeed: 0
 --- !u!1 &6415624828681409462
 GameObject:

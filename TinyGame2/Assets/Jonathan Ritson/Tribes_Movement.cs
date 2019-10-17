@@ -14,6 +14,9 @@ public class Tribes_Movement : MonoBehaviour
     private float targetTime;
     public bool floorstick_enable;
     public bool jump_enable;
+    public PhysicMaterial Ice;
+    private bool iceonoff;
+    private bool moveonoff;
 
     public float overallspeed;
 
@@ -27,6 +30,8 @@ public class Tribes_Movement : MonoBehaviour
         RB = GetComponent<Rigidbody>();
 
         targetTime = 0;
+        iceonoff = false;
+        moveonoff = true;
     }
 
     // Update is called once per frame
@@ -34,11 +39,13 @@ public class Tribes_Movement : MonoBehaviour
     {
         #region movement
 
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
-        RB.AddRelativeForce(new Vector3(moveHorizontal, 0.0f, 0.0f) * sidespeed);
-        RB.AddRelativeForce(new Vector3(0.0f, 0.0f, moveVertical) * forbackspeed);
-
+        if (moveonoff == true)
+        {
+            float moveHorizontal = Input.GetAxis("Horizontal");
+            float moveVertical = Input.GetAxis("Vertical");
+            RB.AddRelativeForce(new Vector3(moveHorizontal, 0.0f, 0.0f) * sidespeed);
+            RB.AddRelativeForce(new Vector3(0.0f, 0.0f, moveVertical) * forbackspeed);
+        }
 
         #endregion
     }
@@ -156,5 +163,24 @@ public class Tribes_Movement : MonoBehaviour
             }
         }
         #endregion
+    }
+
+    void OnTriggerEnter(Collider collider)
+    {
+        if (iceonoff == false)
+        {
+            GetComponent<Collider>().material = Ice;
+            iceonoff = true;
+            moveonoff = false;
+            return;
+        }
+
+        if (iceonoff == true)
+        {
+            GetComponent<Collider>().material = null;
+            iceonoff = false;
+            moveonoff = true;
+            return;
+        }
     }
 }

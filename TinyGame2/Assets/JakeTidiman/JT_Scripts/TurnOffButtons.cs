@@ -6,6 +6,8 @@ public class TurnOffButtons : MonoBehaviour
 {
     private UIManager theMan;
 
+    public GameObject beginButton;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +26,8 @@ public class TurnOffButtons : MonoBehaviour
         {
             item.GetComponent<Animator>().SetBool("Hide", true);
         }
-
+        beginButton.SetActive(true);
         theMan.playButton.GetComponent<Animator>().SetBool("Start", true);
+
     }
 }

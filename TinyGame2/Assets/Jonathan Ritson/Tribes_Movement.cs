@@ -14,11 +14,12 @@ public class Tribes_Movement : MonoBehaviour
     private float targetTime;
     public bool floorstick_enable;
     public bool jump_enable;
-    public bool rail_enable;
     private bool floorstick;
     public PhysicMaterial Ice;
     private bool iceonoff;
     private bool moveonoff;
+    public float jumpmass;
+    public float[] jumpforce;
 
     public float overallspeed;
 
@@ -93,11 +94,9 @@ public class Tribes_Movement : MonoBehaviour
 
         if (floorstick_enable == true && floorstick == true)
         {
- 
             Vector3 pos = transform.position;
             float terrainHeight = Terrain.activeTerrain.SampleHeight(pos);
             transform.position = new Vector3(pos.x, terrainHeight + 1, pos.z);
-
         }
 
 
@@ -124,12 +123,12 @@ public class Tribes_Movement : MonoBehaviour
             {
                 transform.localScale += new Vector3(0, 0.2f, 0);
                 timeup = false;
-                RB.mass = 500;
+                RB.mass = jumpmass;
 
                 if (targetTime < 0.4f)
                 {
                     floorstick = false;
-                    PCpos.y = 2;
+                    PCpos.y = jumpforce[0];
                     RB.velocity = PCpos;
                     targetTime = 0;
                 }
@@ -137,7 +136,7 @@ public class Tribes_Movement : MonoBehaviour
                 if ((targetTime >= 0.4f) && (targetTime < 0.8f))
                 {
                     floorstick = false;
-                    PCpos.y = 4;
+                    PCpos.y = jumpforce[1];
                     RB.velocity = PCpos;
                     targetTime = 0;
                 }
@@ -145,7 +144,7 @@ public class Tribes_Movement : MonoBehaviour
                 if ((targetTime >= 0.8f) && (targetTime < 1.25f))
                 {
                     floorstick = false;
-                    PCpos.y = 6;
+                    PCpos.y = jumpforce[2];
                     RB.velocity = PCpos;
                     targetTime = 0;
                 }
@@ -153,7 +152,7 @@ public class Tribes_Movement : MonoBehaviour
                 if ((targetTime >= 1.25f) && (targetTime < 1.5f))
                 {
                     floorstick = false;
-                    PCpos.y = 8;
+                    PCpos.y = jumpforce[3];
                     RB.velocity = PCpos;
                     targetTime = 0;
                 }
@@ -161,7 +160,7 @@ public class Tribes_Movement : MonoBehaviour
                 if (targetTime >= 1.5f)
                 {
                     floorstick = false;
-                    PCpos.y = 10;
+                    PCpos.y = jumpforce[4];
                     RB.velocity = PCpos;
                     targetTime = 0;
                 }
@@ -173,7 +172,7 @@ public class Tribes_Movement : MonoBehaviour
 
     void OnTriggerEnter(Collider collider)
     {
-        if (iceonoff == false)
+        if (iceonoff == false && collider.gameObject.name == "icetrig")
         {
             GetComponent<Collider>().material = Ice;
             iceonoff = true;
@@ -181,12 +180,18 @@ public class Tribes_Movement : MonoBehaviour
             return;
         }
 
-        if (iceonoff == true)
+        if (iceonoff == true && collider.gameObject.name == "icetrig")
         {
             GetComponent<Collider>().material = null;
             iceonoff = false;
             moveonoff = true;
             return;
+        }
+
+
+        if (collider.gameObject.name == "Collectable")
+        {
+            Debug.Log("collected");
         }
 
     }

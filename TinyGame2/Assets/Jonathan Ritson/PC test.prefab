@@ -161,6 +161,13 @@ MonoBehaviour:
   floorstick_enable: 1
   jump_enable: 1
   Ice: {fileID: 13400000, guid: e4e56b208acc8f7458c607c522f3a1c9, type: 2}
+  jumpmass: 500
+  jumpforce:
+  - 2
+  - 4
+  - 6
+  - 8
+  - 10
   overallspeed: 0
 --- !u!1 &6415624828681409462
 GameObject:

@@ -34,6 +34,8 @@ public class Tribes_Movement : MonoBehaviour
         targetTime = 0;
         iceonoff = false;
         moveonoff = true;
+
+        RB.mass = 100;
     }
 
     // Update is called once per frame
@@ -58,6 +60,7 @@ public class Tribes_Movement : MonoBehaviour
         if (collision.gameObject.name == "Terrain")
         {
             floorstick = true;
+            RB.mass = 100;
         }
 
         if (!(collision.gameObject.name == "Terrain") && (overallspeed > 10))
@@ -121,7 +124,7 @@ public class Tribes_Movement : MonoBehaviour
             {
                 transform.localScale += new Vector3(0, 0.2f, 0);
                 timeup = false;
-
+                RB.mass = 500;
 
                 if (targetTime < 0.4f)
                 {

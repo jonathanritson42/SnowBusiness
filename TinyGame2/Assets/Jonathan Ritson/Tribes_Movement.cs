@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Tribes_Movement : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class Tribes_Movement : MonoBehaviour
     private bool moveonoff;
     public float jumpmass;
     public float[] jumpforce;
+    private bool jumpreset;
 
     public float overallspeed;
 
@@ -61,14 +63,9 @@ public class Tribes_Movement : MonoBehaviour
         if (collision.gameObject.name == "Terrain")
         {
             floorstick = true;
+            jumpreset = true;
             RB.mass = 100;
         }
-
-        if (!(collision.gameObject.name == "Terrain") && (overallspeed > 10))
-        {
-            Debug.Log("Death");
-        }
-
     }
 
     void Update()
@@ -105,7 +102,7 @@ public class Tribes_Movement : MonoBehaviour
 
         #region jump
 
-        if (jump_enable == true)
+        if (jump_enable == true && jumpreset == true)
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
@@ -124,6 +121,7 @@ public class Tribes_Movement : MonoBehaviour
                 transform.localScale += new Vector3(0, 0.2f, 0);
                 timeup = false;
                 RB.mass = jumpmass;
+                jumpreset = false;
 
                 if (targetTime < 0.4f)
                 {
@@ -194,5 +192,14 @@ public class Tribes_Movement : MonoBehaviour
             Debug.Log("collected");
         }
 
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (!(collision.gameObject.name == "Terrain") && (overallspeed > 10))
+        {
+            Debug.Log("Death");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 }

@@ -19,13 +19,14 @@ public class CanvasSway : MonoBehaviour
     {
         ShowJumpCharge();
         MoveUI();
+        ShowSpeed();
     }
 
     public float timer;
 
     public void MoveUI()
     {
-        if (Input.GetKey(KeyCode.A) && uiElements.transform.localPosition.x < 20)
+        if (Input.GetKey(KeyCode.A) && uiElements.transform.localPosition.x < 15)
         {
             uiElements.transform.Translate(Time.deltaTime * 50, 0, 0);
         }
@@ -34,7 +35,7 @@ public class CanvasSway : MonoBehaviour
             timer = 0;
         }
 
-        if (Input.GetKey(KeyCode.D) && uiElements.transform.localPosition.x > -20)
+        if (Input.GetKey(KeyCode.D) && uiElements.transform.localPosition.x > -15)
         {
             uiElements.transform.Translate(Time.deltaTime * -50, 0, 0);
         }
@@ -66,5 +67,12 @@ public class CanvasSway : MonoBehaviour
             chargeAmount = 0;
         }
         jumpSlider.value = chargeAmount;
+    }
+
+    public Text speedText;
+
+    public void ShowSpeed()
+    {
+        speedText.text = FindObjectOfType<Tribes_Movement>().overallspeed.ToString("0.0");
     }
 }

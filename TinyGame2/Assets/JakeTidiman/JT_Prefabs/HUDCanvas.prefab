@@ -711,6 +711,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiElements: {fileID: 1341119847142711560}
   timerText: {fileID: 301430355}
+  windParticles:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   timer: 0
   chargeAmount: 0
   jumpSlider: {fileID: 1341119846835906600}

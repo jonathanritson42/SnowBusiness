@@ -10,6 +10,8 @@ public class CanvasSway : MonoBehaviour
     public Text timerText;
     float timeCount;
 
+    public GameObject[] windParticles;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +26,7 @@ public class CanvasSway : MonoBehaviour
         ShowJumpCharge();
         MoveUI();
         ShowSpeed();
+        IncreaseSpeedEffect();
     }
 
     public float timer;
@@ -77,6 +80,24 @@ public class CanvasSway : MonoBehaviour
 
     public void ShowSpeed()
     {
-        //speedText.text = FindObjectOfType<Tribes_Movement>().overallspeed.ToString("0.0");
+        speedText.text = FindObjectOfType<Tribes_Movement>().overallspeed.ToString("0.0");
+    }
+
+    public void IncreaseSpeedEffect()
+    {
+        if (FindObjectOfType<Tribes_Movement>().overallspeed > 20)
+        {
+            foreach (var item in windParticles)
+            {
+                item.SetActive(true);
+            }
+        }
+        else
+        {
+            foreach (var item in windParticles)
+            {
+                item.SetActive(false);
+            }
+        }
     }
 }

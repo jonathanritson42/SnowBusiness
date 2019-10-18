@@ -11,6 +11,7 @@ public class CanvasSway : MonoBehaviour
     float timeCount;
 
     public GameObject[] windParticles;
+    public GameObject[] windParticles2;
 
     // Start is called before the first frame update
     void Start()
@@ -95,6 +96,21 @@ public class CanvasSway : MonoBehaviour
         else
         {
             foreach (var item in windParticles)
+            {
+                item.SetActive(false);
+            }
+        }
+
+        if(FindObjectOfType<Tribes_Movement>().overallspeed > 40)
+        {
+            foreach (var item in windParticles2)
+            {
+                item.SetActive(true);
+            }
+        }
+        else
+        {
+            foreach (var item in windParticles2)
             {
                 item.SetActive(false);
             }

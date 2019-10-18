@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CanvasSway : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class CanvasSway : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        ShowJumpCharge();
         MoveUI();
     }
 
@@ -47,5 +48,21 @@ public class CanvasSway : MonoBehaviour
             timer += Time.deltaTime * 5;
             uiElements.transform.position = Vector3.Lerp(uiElements.transform.position, transform.position, timer);
         }
+    }
+
+    public float chargeAmount;
+    public Slider jumpSlider;
+
+    public void ShowJumpCharge()
+    {
+        if (Input.GetKey(KeyCode.Space))
+        {
+            chargeAmount += Time.deltaTime;
+        }
+        else
+        {
+            chargeAmount = 0;
+        }
+        jumpSlider.value = chargeAmount;
     }
 }

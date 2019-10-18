@@ -14,6 +14,8 @@ public class Tribes_Movement : MonoBehaviour
     private float targetTime;
     public bool floorstick_enable;
     public bool jump_enable;
+    public bool rail_enable;
+    private bool floorstick;
     public PhysicMaterial Ice;
     private bool iceonoff;
     private bool moveonoff;
@@ -55,7 +57,7 @@ public class Tribes_Movement : MonoBehaviour
 
         if (collision.gameObject.name == "Terrain")
         {
-            floorstick_enable = true;
+            floorstick = true;
         }
 
         if (!(collision.gameObject.name == "Terrain") && (overallspeed > 10))
@@ -86,7 +88,7 @@ public class Tribes_Movement : MonoBehaviour
 
         #region floorstick
 
-        if (floorstick_enable == true)
+        if (floorstick_enable == true && floorstick == true)
         {
  
             Vector3 pos = transform.position;
@@ -123,7 +125,7 @@ public class Tribes_Movement : MonoBehaviour
 
                 if (targetTime < 0.4f)
                 {
-                    floorstick_enable = false;
+                    floorstick = false;
                     PCpos.y = 2;
                     RB.velocity = PCpos;
                     targetTime = 0;
@@ -131,7 +133,7 @@ public class Tribes_Movement : MonoBehaviour
 
                 if ((targetTime >= 0.4f) && (targetTime < 0.8f))
                 {
-                    floorstick_enable = false;
+                    floorstick = false;
                     PCpos.y = 4;
                     RB.velocity = PCpos;
                     targetTime = 0;
@@ -139,7 +141,7 @@ public class Tribes_Movement : MonoBehaviour
 
                 if ((targetTime >= 0.8f) && (targetTime < 1.25f))
                 {
-                    floorstick_enable = false;
+                    floorstick = false;
                     PCpos.y = 6;
                     RB.velocity = PCpos;
                     targetTime = 0;
@@ -147,7 +149,7 @@ public class Tribes_Movement : MonoBehaviour
 
                 if ((targetTime >= 1.25f) && (targetTime < 1.5f))
                 {
-                    floorstick_enable = false;
+                    floorstick = false;
                     PCpos.y = 8;
                     RB.velocity = PCpos;
                     targetTime = 0;
@@ -155,7 +157,7 @@ public class Tribes_Movement : MonoBehaviour
 
                 if (targetTime >= 1.5f)
                 {
-                    floorstick_enable = false;
+                    floorstick = false;
                     PCpos.y = 10;
                     RB.velocity = PCpos;
                     targetTime = 0;
@@ -163,6 +165,7 @@ public class Tribes_Movement : MonoBehaviour
             }
         }
         #endregion
+
     }
 
     void OnTriggerEnter(Collider collider)
@@ -182,5 +185,6 @@ public class Tribes_Movement : MonoBehaviour
             moveonoff = true;
             return;
         }
+
     }
 }

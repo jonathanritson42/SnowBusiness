@@ -155,12 +155,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41e11fab1c691e34593c82c712c369cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forbackspeed: 500
-  sidespeed: 1000
+  forbackspeed: 1000
+  sidespeed: 3000
   lookSpeed: 3
   floorstick_enable: 1
   jump_enable: 1
   Ice: {fileID: 13400000, guid: e4e56b208acc8f7458c607c522f3a1c9, type: 2}
+  EndTrig: {fileID: 13400000, guid: 1d6b30bbde06688408a10321419a8489, type: 2}
   jumpmass: 500
   jumpforce:
   - 2

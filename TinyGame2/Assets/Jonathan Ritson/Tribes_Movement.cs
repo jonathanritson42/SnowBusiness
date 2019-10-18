@@ -16,7 +16,7 @@ public class Tribes_Movement : MonoBehaviour
     public bool floorstick_enable;
     public bool jump_enable;
     private bool floorstick;
-    public PhysicMaterial Ice;
+    public PhysicMaterial Ice, EndTrig;
     private bool iceonoff;
     private bool moveonoff;
     public float jumpmass;
@@ -190,6 +190,16 @@ public class Tribes_Movement : MonoBehaviour
         if (collider.gameObject.name == "Collectable")
         {
             Debug.Log("collected");
+        }
+
+        if (collider.gameObject.name == "End_Trigger")
+        {
+            GetComponent<Collider>().material = EndTrig;
+            iceonoff = true;
+            moveonoff = false;
+            RB.mass = 500;
+
+            // come back to this to make the pc stop completely
         }
 
     }

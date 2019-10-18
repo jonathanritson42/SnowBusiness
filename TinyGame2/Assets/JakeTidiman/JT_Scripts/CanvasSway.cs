@@ -7,6 +7,8 @@ public class CanvasSway : MonoBehaviour
 {
 
     public GameObject uiElements;
+    public Text timerText;
+    float timeCount;
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +19,8 @@ public class CanvasSway : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        timeCount += Time.deltaTime;
+        timerText.text = timeCount.ToString("0.0");
         ShowJumpCharge();
         MoveUI();
         ShowSpeed();
@@ -73,6 +77,6 @@ public class CanvasSway : MonoBehaviour
 
     public void ShowSpeed()
     {
-        speedText.text = FindObjectOfType<Tribes_Movement>().overallspeed.ToString("0.0");
+        //speedText.text = FindObjectOfType<Tribes_Movement>().overallspeed.ToString("0.0");
     }
 }

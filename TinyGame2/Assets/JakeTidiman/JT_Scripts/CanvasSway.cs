@@ -52,12 +52,14 @@ public class CanvasSway : MonoBehaviour
 
     public float chargeAmount;
     public Slider jumpSlider;
+    public GameObject tutorialText;
 
     public void ShowJumpCharge()
     {
         if (Input.GetKey(KeyCode.Space))
         {
             chargeAmount += Time.deltaTime;
+            tutorialText.SetActive(false);
         }
         else
         {

@@ -5062,17 +5062,17 @@ PrefabInstance:
     - target: {fileID: 5860821639772403405, guid: f978dbe95ade81145a0a99cada9e09f7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 859.3
+      value: 866
       objectReference: {fileID: 0}
     - target: {fileID: 5860821639772403405, guid: f978dbe95ade81145a0a99cada9e09f7,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -814.1
+      value: -640
       objectReference: {fileID: 0}
     - target: {fileID: 5860821639772403405, guid: f978dbe95ade81145a0a99cada9e09f7,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.013419508
+      value: 0.0006150476
       objectReference: {fileID: 0}
     - target: {fileID: 5860821639772403405, guid: f978dbe95ade81145a0a99cada9e09f7,
         type: 3}
@@ -5087,7 +5087,7 @@ PrefabInstance:
     - target: {fileID: 5860821639772403405, guid: f978dbe95ade81145a0a99cada9e09f7,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.99991
+      value: 0.9999998
       objectReference: {fileID: 0}
     - target: {fileID: 5860821639772403405, guid: f978dbe95ade81145a0a99cada9e09f7,
         type: 3}
@@ -5097,7 +5097,7 @@ PrefabInstance:
     - target: {fileID: 5860821639772403405, guid: f978dbe95ade81145a0a99cada9e09f7,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 1.5380001
+      value: 0.07
       objectReference: {fileID: 0}
     - target: {fileID: 5860821639772403405, guid: f978dbe95ade81145a0a99cada9e09f7,
         type: 3}
@@ -5112,17 +5112,17 @@ PrefabInstance:
     - target: {fileID: 5860821639772403405, guid: f978dbe95ade81145a0a99cada9e09f7,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 2.3098063
+      value: 1.4905642
       objectReference: {fileID: 0}
     - target: {fileID: 5860821639772403405, guid: f978dbe95ade81145a0a99cada9e09f7,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 2.3098063
+      value: 1.4905642
       objectReference: {fileID: 0}
     - target: {fileID: 5860821639772403405, guid: f978dbe95ade81145a0a99cada9e09f7,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 2.3098063
+      value: 1.4905642
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f978dbe95ade81145a0a99cada9e09f7, type: 3}

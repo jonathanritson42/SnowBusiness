@@ -32,6 +32,7 @@ public class CanvasSway : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.F))
         {
+            hitEndTrigger = true;
             StartCoroutine(ShowEndScreenDelay());
         }
 

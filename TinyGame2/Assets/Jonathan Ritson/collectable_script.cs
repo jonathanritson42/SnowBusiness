@@ -6,8 +6,7 @@ public class collectable_script : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        FindObjectOfType<CanvasSway>().collectables++;
-        FindObjectOfType<CanvasSway>().GetComponent<Animator>().Play("UIPickUp");
+        FindObjectOfType<CanvasSway>().AddCollectable();
         Destroy(gameObject);
     }
 }

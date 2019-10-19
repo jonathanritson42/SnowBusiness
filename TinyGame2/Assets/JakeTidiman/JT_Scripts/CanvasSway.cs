@@ -131,7 +131,14 @@ public class CanvasSway : MonoBehaviour
 
     public int collectables;
     public GameObject endCanvas;
-    public Text timetext, scoreText;
+    public Text timetext, scoreText, score;
+
+    public void AddCollectable()
+    {
+        collectables++;
+        score.text = collectables.ToString();
+        score.GetComponent<Animator>().SetBool("PickedUp", true);
+    }
 
     public IEnumerator ShowEndScreenDelay()
     {

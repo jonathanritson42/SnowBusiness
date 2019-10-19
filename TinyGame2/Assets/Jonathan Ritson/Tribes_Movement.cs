@@ -22,6 +22,8 @@ public class Tribes_Movement : MonoBehaviour
     public float jumpmass;
     public float[] jumpforce;
     private bool jumpreset;
+    private int checknum;
+    private Vector3 checkpoint;
 
     public float overallspeed;
 
@@ -170,6 +172,8 @@ public class Tribes_Movement : MonoBehaviour
 
     void OnTriggerEnter(Collider collider)
     {
+        #region icemoveloss
+
         if (iceonoff == false && collider.gameObject.name == "icetrig")
         {
             GetComponent<Collider>().material = Ice;
@@ -186,30 +190,76 @@ public class Tribes_Movement : MonoBehaviour
             return;
         }
 
+        #endregion
+
+
+        #region collectables
 
         if (collider.gameObject.name == "Collectable")
         {
             Debug.Log("collected");
         }
 
+        #endregion
+
+
+        #region checkpointupdate
+
+        if (collider.gameObject.name == "Checkpoint")
+        {
+            checkpoint = this.transform.position;
+            checknum++;
+        }
+
+        #endregion
+
+
+        #region endtrigger
+
         if (collider.gameObject.name == "End_Trigger")
         {
             GetComponent<Collider>().material = EndTrig;
             iceonoff = true;
             moveonoff = false;
-            RB.mass = 500;
+            RB.mass = 300;
 
-            // come back to this to make the pc stop completely
+            StartCoroutine(endstop());
         }
 
+        #endregion
     }
 
     private void OnCollisionEnter(Collision collision)
     {
+
         if (!(collision.gameObject.name == "Terrain") && (overallspeed > 10))
         {
-            Debug.Log("Death");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+            #region Death
+
+            if (checknum == 0)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
+
+            else
+            {
+                transform.position = checkpoint;
+
+                jump_enable = true;
+                jumpreset = true;
+
+                //bug - Hopefully fixed - not able to jump after reset to checkpoint if jumping previously.
+            }
+
+            #endregion
         }
+    }
+
+    IEnumerator endstop()
+    {
+        yield return new WaitForSeconds(2);
+
+        RB.constraints = RigidbodyConstraints.FreezeAll;
     }
 }

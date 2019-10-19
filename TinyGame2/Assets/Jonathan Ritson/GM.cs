@@ -10,7 +10,6 @@ public class GM : MonoBehaviour
     public float Target, Timedown_val;
     private float upval, downval;
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -50,6 +49,14 @@ public class GM : MonoBehaviour
             Clock.text = downval.ToString();
             yield return new WaitForSeconds(1);
             downval -= 1;
+        }
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
         }
     }
 }

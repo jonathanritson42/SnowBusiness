@@ -13,6 +13,8 @@ public class CanvasSway : MonoBehaviour
     public GameObject[] windParticles;
     public GameObject[] windParticles2;
 
+    public bool hitEndTrigger;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,8 +24,17 @@ public class CanvasSway : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timeCount += Time.deltaTime;
-        timerText.text = timeCount.ToString("0.0");
+        if (!hitEndTrigger)
+        {
+            timeCount += Time.deltaTime;
+            timerText.text = timeCount.ToString("0.0");
+        }
+
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            StartCoroutine(ShowEndScreenDelay());
+        }
+
         ShowJumpCharge();
         MoveUI();
         ShowSpeed();
@@ -116,4 +127,18 @@ public class CanvasSway : MonoBehaviour
             }
         }
     }
+
+    public int collectables;
+    public GameObject endCanvas;
+    public Text timetext, scoreText;
+
+    public IEnumerator ShowEndScreenDelay()
+    {
+        timetext.text = timeCount.ToString("0.0");
+        scoreText.text = collectables.ToString();
+        yield return new WaitForSeconds(1.5f);
+        endCanvas.SetActive(true);
+    }
+
+
 }

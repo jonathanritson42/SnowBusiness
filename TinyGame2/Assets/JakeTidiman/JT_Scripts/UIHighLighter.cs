@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
+
 public class UIHighLighter : MonoBehaviour, ISelectHandler, IPointerEnterHandler
 {
     // When highlighted with mouse.
@@ -20,5 +22,10 @@ public class UIHighLighter : MonoBehaviour, ISelectHandler, IPointerEnterHandler
     {
         // Do something.
         Debug.Log("<color=red>Event:</color> Completed selection.");
+    }
+
+    public void StartGame()
+    {
+        SceneManager.LoadScene(1);
     }
 }

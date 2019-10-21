@@ -171,22 +171,23 @@ public class Tribes_Movement : MonoBehaviour
 
 
         #region speed_death
-
-        if (overallspeed > 5)
+        if (moveonoff == true)
         {
-            startbool = true;
-        }
+            if (overallspeed > 5)
+            {
+                startbool = true;
+            }
 
-        if (overallspeed < 1 && !Input.GetKeyDown(KeyCode.S) && (startbool == true))
-        {
-            Death();
-        }
+            if (overallspeed < 1 && !Input.GetKeyDown(KeyCode.S) && (startbool == true))
+            {
+                Death();
+            }
 
-        if (overallspeed < 1 && Input.GetKeyDown(KeyCode.S))
-        {
-            startbool = false;
+            if (overallspeed < 1 && Input.GetKeyDown(KeyCode.S))
+            {
+                startbool = false;
+            }
         }
-
 
         #endregion
     }

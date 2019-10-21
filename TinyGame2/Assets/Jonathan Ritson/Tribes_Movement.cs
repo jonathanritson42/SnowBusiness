@@ -24,6 +24,7 @@ public class Tribes_Movement : MonoBehaviour
     private bool jumpreset;
     private int checknum;
     private Vector3 checkpoint;
+    private bool startbool;
 
     public float overallspeed;
 
@@ -168,6 +169,26 @@ public class Tribes_Movement : MonoBehaviour
         }
         #endregion
 
+
+        #region speed_death
+
+        if (overallspeed > 5)
+        {
+            startbool = true;
+        }
+
+        if (overallspeed < 1 && !Input.GetKeyDown(KeyCode.S) && (startbool == true))
+        {
+            Death();
+        }
+
+        if (overallspeed < 1 && Input.GetKeyDown(KeyCode.S))
+        {
+            startbool = false;
+        }
+
+
+        #endregion
     }
 
     void OnTriggerEnter(Collider collider)

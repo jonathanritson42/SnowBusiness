@@ -231,29 +231,11 @@ public class Tribes_Movement : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-
-        if (!(collision.gameObject.name == "Terrain") && (overallspeed > 10))
+        if ((!(collision.gameObject.name == "Terrain")) && (overallspeed > 10))
         {
-
-            #region Death
-
-            if (checknum == 0)
-            {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-            }
-
-            else
-            {
-                transform.position = checkpoint;
-
-                jump_enable = true;
-                jumpreset = true;
-
-                //bug - Hopefully fixed - not able to jump after reset to checkpoint if jumping previously.
-            }
-
-            #endregion
+            Death();
         }
+
     }
 
     IEnumerator endstop()
@@ -261,5 +243,27 @@ public class Tribes_Movement : MonoBehaviour
         yield return new WaitForSeconds(2);
 
         RB.constraints = RigidbodyConstraints.FreezeAll;
+    }
+
+    public void Death()
+    {
+        #region Death
+
+        if (checknum == 0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+
+        else
+        {
+            transform.position = checkpoint;
+
+            jump_enable = true;
+            jumpreset = true;
+
+            //bug - Hopefully fixed - not able to jump after reset to checkpoint if jumping previously.
+        }
+
+        #endregion
     }
 }

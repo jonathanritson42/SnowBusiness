@@ -13000,6 +13000,16 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1341119846835906600, guid: 18c0ab21b248151469b5a1d15ca8ad22,
+        type: 3}
+      propertyPath: m_MaxValue
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1341119846835906600, guid: 18c0ab21b248151469b5a1d15ca8ad22,
+        type: 3}
+      propertyPath: m_Value
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18c0ab21b248151469b5a1d15ca8ad22, type: 3}
 --- !u!4 &1286593396 stripped
@@ -18902,6 +18912,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7064851474878561362, guid: a81a19e1112cd654386668b6895474fc,
+        type: 3}
+      propertyPath: jumpforce.Array.data[0]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7064851474878561362, guid: a81a19e1112cd654386668b6895474fc,
+        type: 3}
+      propertyPath: jumpforce.Array.data[1]
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a81a19e1112cd654386668b6895474fc, type: 3}

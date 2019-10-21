@@ -126,7 +126,7 @@ public class Tribes_Movement : MonoBehaviour
                 RB.mass = jumpmass;
                 jumpreset = false;
 
-                if (targetTime < 0.4f)
+                if (targetTime < 0.1f)
                 {
                     floorstick = false;
                     PCpos.y = jumpforce[0];
@@ -134,7 +134,7 @@ public class Tribes_Movement : MonoBehaviour
                     targetTime = 0;
                 }
 
-                if ((targetTime >= 0.4f) && (targetTime < 0.8f))
+                if ((targetTime >= 0.1f) && (targetTime < 0.2f))
                 {
                     floorstick = false;
                     PCpos.y = jumpforce[1];
@@ -142,7 +142,7 @@ public class Tribes_Movement : MonoBehaviour
                     targetTime = 0;
                 }
 
-                if ((targetTime >= 0.8f) && (targetTime < 1.25f))
+                if ((targetTime >= 0.2f) && (targetTime < 0.4f))
                 {
                     floorstick = false;
                     PCpos.y = jumpforce[2];
@@ -150,7 +150,7 @@ public class Tribes_Movement : MonoBehaviour
                     targetTime = 0;
                 }
 
-                if ((targetTime >= 1.25f) && (targetTime < 1.5f))
+                if ((targetTime >= 0.4f) && (targetTime < 0.5f))
                 {
                     floorstick = false;
                     PCpos.y = jumpforce[3];
@@ -158,7 +158,7 @@ public class Tribes_Movement : MonoBehaviour
                     targetTime = 0;
                 }
 
-                if (targetTime >= 1.5f)
+                if (targetTime >= 0.5f)
                 {
                     floorstick = false;
                     PCpos.y = jumpforce[4];

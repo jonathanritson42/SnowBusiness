@@ -170,7 +170,7 @@ PrefabInstance:
     - target: {fileID: 8728298059588520327, guid: a85c23c27a37c384d9e7f481d0c14ae9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8728298059588520327, guid: a85c23c27a37c384d9e7f481d0c14ae9,
         type: 3}
@@ -240,6 +240,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Level
+      objectReference: {fileID: 0}
+    - target: {fileID: 1816596146386737264, guid: 2879f0a80bf33bf4191030d82bc12ef5,
+        type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1816596146386737264, guid: 2879f0a80bf33bf4191030d82bc12ef5,
+        type: 3}
+      propertyPath: m_Shadows.m_Strength
+      value: 0.91
       objectReference: {fileID: 0}
     - target: {fileID: 4996328753313242072, guid: 2879f0a80bf33bf4191030d82bc12ef5,
         type: 3}
@@ -346,20 +356,15 @@ PrefabInstance:
       propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1816596146386737264, guid: 2879f0a80bf33bf4191030d82bc12ef5,
-        type: 3}
-      propertyPath: m_Shadows.m_Type
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1816596146386737264, guid: 2879f0a80bf33bf4191030d82bc12ef5,
-        type: 3}
-      propertyPath: m_Shadows.m_Strength
-      value: 0.91
-      objectReference: {fileID: 0}
     - target: {fileID: 1816596147550646580, guid: 2879f0a80bf33bf4191030d82bc12ef5,
         type: 3}
       propertyPath: m_TreeBillboardDistance
       value: 800
+      objectReference: {fileID: 0}
+    - target: {fileID: 1816596147767181910, guid: 2879f0a80bf33bf4191030d82bc12ef5,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2288
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2879f0a80bf33bf4191030d82bc12ef5, type: 3}

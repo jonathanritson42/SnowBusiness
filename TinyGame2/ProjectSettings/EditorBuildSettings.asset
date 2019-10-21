@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/JakeTidiman/Scenes/TitleScene.unity
+    guid: 831df0961db63a4479835c799a6bfc80
+  - enabled: 1
+    path: Assets/Pietro Mascellino/PM_Scenes/PM_LowPolyScene.unity
+    guid: 1b8e8180d78f4044cbe8f527af39a908
   m_configObjects: {}

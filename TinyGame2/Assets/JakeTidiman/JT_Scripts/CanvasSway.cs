@@ -24,15 +24,15 @@ public class CanvasSway : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (!hitEndTrigger)
         {
             timeCount += Time.deltaTime;
             timerText.text = timeCount.ToString("0.0");
         }
 
-        if (Input.GetKeyDown(KeyCode.F))
+        if (hitEndTrigger)
         {
-            hitEndTrigger = true;
             StartCoroutine(ShowEndScreenDelay());
         }
 
@@ -132,12 +132,14 @@ public class CanvasSway : MonoBehaviour
     public int collectables;
     public GameObject endCanvas;
     public Text timetext, scoreText, score;
+    public GameObject feedBack;
 
     public void AddCollectable()
     {
         collectables++;
         score.text = collectables.ToString();
         score.GetComponent<Animator>().SetBool("PickedUp", true);
+        StartCoroutine(FeedBackShow());
     }
 
     public IEnumerator ShowEndScreenDelay()
@@ -146,6 +148,13 @@ public class CanvasSway : MonoBehaviour
         scoreText.text = collectables.ToString();
         yield return new WaitForSeconds(1.5f);
         endCanvas.SetActive(true);
+    }
+
+    private IEnumerator FeedBackShow()
+    {
+        feedBack.SetActive(true);
+        yield return new WaitForSeconds(0.2f);
+        feedBack.SetActive(false);
     }
 
 

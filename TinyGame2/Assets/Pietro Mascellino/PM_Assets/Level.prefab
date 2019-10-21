@@ -464,7 +464,7 @@ Terrain:
   m_Enabled: 1
   serializedVersion: 5
   m_TerrainData: {fileID: 15600000, guid: f88441ed6b1dc4c49b0ec207cc261b63, type: 2}
-  m_TreeDistance: 5000
+  m_TreeDistance: 2000
   m_TreeBillboardDistance: 800
   m_TreeCrossFadeLength: 5
   m_TreeMaximumFullLODCount: 50
@@ -14215,7 +14215,7 @@ PrefabInstance:
     - target: {fileID: 7064851474878561375, guid: a81a19e1112cd654386668b6895474fc,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 805.6
+      value: 802.912
       objectReference: {fileID: 0}
     - target: {fileID: 7064851474878561375, guid: a81a19e1112cd654386668b6895474fc,
         type: 3}
@@ -14277,6 +14277,11 @@ PrefabInstance:
       propertyPath: jumpforce.Array.data[1]
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 7064851474878561362, guid: a81a19e1112cd654386668b6895474fc,
+        type: 3}
+      propertyPath: terrain
+      value: 
+      objectReference: {fileID: 1816596147550646580}
     - target: {fileID: 7337110583851273754, guid: a81a19e1112cd654386668b6895474fc,
         type: 3}
       propertyPath: m_Enabled

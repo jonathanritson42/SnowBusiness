@@ -25,7 +25,7 @@ public class Tribes_Movement : MonoBehaviour
     private int checknum;
     private Vector3 checkpoint;
     private bool startbool;
-
+    public Terrain terrain;
     public float overallspeed;
 
 
@@ -95,7 +95,7 @@ public class Tribes_Movement : MonoBehaviour
         if (floorstick_enable == true && floorstick == true)
         {
             Vector3 pos = transform.position;
-            float terrainHeight = Terrain.activeTerrain.SampleHeight(pos);
+            float terrainHeight = terrain.SampleHeight(pos);
             transform.position = new Vector3(pos.x, terrainHeight + 1, pos.z);
         }
 
@@ -246,6 +246,7 @@ public class Tribes_Movement : MonoBehaviour
             RB.mass = 300;
 
             StartCoroutine(endstop());
+            FindObjectOfType<CanvasSway>().hitEndTrigger = true;
         }
 
         #endregion

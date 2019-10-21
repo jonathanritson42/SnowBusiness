@@ -170,7 +170,7 @@ PrefabInstance:
     - target: {fileID: 8728298059588520327, guid: a85c23c27a37c384d9e7f481d0c14ae9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8728298059588520327, guid: a85c23c27a37c384d9e7f481d0c14ae9,
         type: 3}
@@ -383,7 +383,7 @@ PrefabInstance:
     - target: {fileID: 8880742697638527066, guid: 2879f0a80bf33bf4191030d82bc12ef5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 802.542
+      value: 805.6
       objectReference: {fileID: 0}
     - target: {fileID: 8880742697638527066, guid: 2879f0a80bf33bf4191030d82bc12ef5,
         type: 3}
@@ -414,6 +414,11 @@ PrefabInstance:
         type: 3}
       propertyPath: sidespeed
       value: 3500
+      objectReference: {fileID: 0}
+    - target: {fileID: 9000302712227803679, guid: 2879f0a80bf33bf4191030d82bc12ef5,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 840279732749439068, guid: 2879f0a80bf33bf4191030d82bc12ef5,
         type: 3}

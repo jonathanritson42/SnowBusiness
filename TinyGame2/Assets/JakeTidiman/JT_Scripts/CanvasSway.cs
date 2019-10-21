@@ -15,6 +15,9 @@ public class CanvasSway : MonoBehaviour
 
     public bool hitEndTrigger;
 
+    public AudioSource pickup;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -80,7 +83,6 @@ public class CanvasSway : MonoBehaviour
         if (Input.GetKey(KeyCode.Space))
         {
             chargeAmount += Time.deltaTime;
-            tutorialText.SetActive(false);
         }
         else
         {
@@ -140,6 +142,7 @@ public class CanvasSway : MonoBehaviour
         score.text = collectables.ToString();
         score.GetComponent<Animator>().SetBool("PickedUp", true);
         StartCoroutine(FeedBackShow());
+        pickup.Play();
     }
 
     public IEnumerator ShowEndScreenDelay()

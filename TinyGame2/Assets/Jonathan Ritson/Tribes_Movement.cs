@@ -78,6 +78,10 @@ public class Tribes_Movement : MonoBehaviour
 
         PCpos = RB.velocity;
 
+        if (Input.GetKey(KeyCode.W))
+        {
+            StartCoroutine(tutorial());
+        }
 
         #region camera
 
@@ -288,5 +292,12 @@ public class Tribes_Movement : MonoBehaviour
         }
 
         #endregion
+    }
+
+    IEnumerator tutorial()
+    {
+        yield return new WaitForSeconds(2);
+        FindObjectOfType<CanvasSway>().tutorialText.SetActive(false);
+
     }
 }
